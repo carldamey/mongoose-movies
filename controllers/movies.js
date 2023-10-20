@@ -7,7 +7,7 @@ module.exports = {
 const Movie = require('../models/movie');
 
 function newMovie(req, res) {
-    res.render('movies/new', { errorMsg: ""})
+    res.render('movies/new', { errorMsg: "", title: "New Movie"})
 };
 
 async function create(req, res) {
@@ -19,12 +19,16 @@ async function create(req, res) {
     if (req.body.cast) req.body.cast = req.body.cast.split(/\s,\s*/)
     try {
         await Movie.create(req.body)
-        res.redirect("movies/new")
+        res.redirect("movies/")
     } catch (err) {
-        res.render("movies/new/", {errorMsg: err.message})
+        res.render("movies/new/", {errorMsg: err.message, title: "Error"})
     }
 }
 
-function index(req, res) {
-    res.render("movies/index")
+async function index(req, res) {
+    try {
+        res.render("movies/index", {title: "All Movies", movies: await Movie.find({})})
+    } catch(err) {
+        res.render("movies/index", {title: "Error", errorMsg: err.message})
+    }
 }
