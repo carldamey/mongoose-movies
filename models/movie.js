@@ -27,7 +27,8 @@ const movieSchema = new mongoose.Schema({
     enum: ['G', 'PG', 'PG-13', 'R']
   },
   cast: [String],
-  nowShowing: { type: Boolean, default: true }
+  nowShowing: { type: Boolean, default: true },
+  reviews: [reviewSchema],
 }, {
   timestamps: true
 });
