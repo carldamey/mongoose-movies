@@ -1,15 +1,15 @@
-const express = require('express');
-const router = express.Router();
+const express = require("express")
+const router = express.Router()
 // You'll be creating this controller module next
-const moviesCtrl = require('../controllers/movies');
-	
+const moviesCtrl = require("../controllers/movies")
+
 // GET /movies
-router.get('/', moviesCtrl.index);
+router.get("/", moviesCtrl.index)
 // GET /movies/new
-router.get('/new', moviesCtrl.new);
+router.get("/new", moviesCtrl.new)
 // GET /movies/:id (show functionality) MUST be below new route
-router.get('/:id', moviesCtrl.show);
+router.get("/:id", moviesCtrl.show)
 // POST /movies
-router.post('/', moviesCtrl.create);
-	
-module.exports = router;
+router.post("/", moviesCtrl.create)
+
+module.exports = router

@@ -2,9 +2,9 @@
 
 <form id="new-form" action="/movies" method="POST">
   <label>Title:</label>
-  <input type="text" name="title">
+  <input type="text" name="title" />
   <label>Release Year:</label>
-  <input type="text" name="releaseYear">
+  <input type="text" name="releaseYear" />
   <label>MPAA Rating</label>
   <select name="mpaaRating">
     <option value="G">G</option>
@@ -13,10 +13,10 @@
     <option value="R">R</option>
   </select>
   <label>Cast (separate actors with commas):</label>
-  <input type="text" name="cast">
+  <input type="text" name="cast" />
   <label>Now Showing:</label>
-  <input type="checkbox" name="nowShowing" checked>
-  <input type="submit" value="Add Movie">
+  <input type="checkbox" name="nowShowing" checked />
+  <input type="submit" value="Add Movie" />
 </form>
 
 <%- include('../partials/footer') %>
